@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginRight="@dimen/dimens_16dp"
+    android:elevation="8dp"
+    app:cardCornerRadius="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundLight"
+        >
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_avatar"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#E6E0E0"
+            app:cardCornerRadius="50dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+          />
+
+
+        <View
+            android:id="@+id/actv_name"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="50dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginLeft="16dp"
+            android:background="#E6E0E0"
+            app:layout_constraintStart_toEndOf="@id/cv_avatar"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </View>
+
+        <View
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="25dp"
+            android:id="@+id/actv_email"
+         android:background="#E6E0E0"
+            app:layout_constraintStart_toEndOf="@id/cv_avatar"
+            app:layout_constraintTop_toBottomOf="@id/actv_name"
+            android:layout_marginLeft="16dp"
+            >
+
+        </View>
+
+        <View
+            android:layout_width="24dp"
+            android:layout_height="90dp"
+
+            style="@style/AvenirNextBold"
+            android:gravity="center"
+            android:textColor="@color/backgroundLight"
+            android:textAlignment="center"
+             android:background="@color/cardview_shadow_end_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="parent">
+
+        </View>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

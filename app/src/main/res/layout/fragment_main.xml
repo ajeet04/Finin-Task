@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:shimmer="http://schemas.android.com/tools">
     <data>
         <variable
             name="isLoading"
@@ -80,32 +81,53 @@
         </androidx.recyclerview.widget.RecyclerView>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-    <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        setVisibleInvisible="@{isLoading}"
-        android:visibility="gone"
-        android:id="@+id/pg"
-        android:backgroundTint="@color/colorAccent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
->
+<!--    <ProgressBar-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        setVisibleInvisible="@{isLoading}"-->
+<!--        android:visibility="gone"-->
+<!--        android:id="@+id/pg"-->
+<!--        android:backgroundTint="@color/colorAccent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--&gt;-->
 
-    </ProgressBar>
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/AvenirNextRegular.Demi"
-        android:visibility="gone"
-        android:layout_marginTop="@dimen/dimens_16dp"
-        setVisibleInvisible="@{isLoading}"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pg"
-        android:text="Please wait for while. We are loading data.">
+<!--    </ProgressBar>-->
+<!--    <androidx.appcompat.widget.AppCompatTextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        style="@style/AvenirNextRegular.Demi"-->
+<!--        android:visibility="gone"-->
+<!--        android:layout_marginTop="@dimen/dimens_16dp"-->
+<!--        setVisibleInvisible="@{isLoading}"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/pg"-->
+<!--        android:text="Please wait for while. We are loading data.">-->
 
-    </androidx.appcompat.widget.AppCompatTextView>
+<!--    </androidx.appcompat.widget.AppCompatTextView>-->
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/parentShimmerLayout"
+        android:layout_marginTop="64dp"
+        setVisibleInvisible="@{isLoading}" >
+        // 2
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/item_view"/>
+            <include layout="@layout/item_view"/>
+            <include layout="@layout/item_view"/>
+            <include layout="@layout/item_view"/>
+            <include layout="@layout/item_view"/>
+            <include layout="@layout/item_view"/>
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
