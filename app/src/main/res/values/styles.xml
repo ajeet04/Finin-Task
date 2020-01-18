@@ -1,0 +1,35 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="AvenirNextDemi" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/avenir_next_cyr_demi</item>
+    </style>
+
+    <style name="AvenirNextBold" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/avenir_next_cyr_demi</item>
+    </style>
+
+    <style name="AvenirNextRegular" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/avenir_next_cyr_regular</item>
+    </style>
+    <style name="AvenirNextRegular.White.16" parent="AvenirNextRegular">
+        <item name="android:textSize">@dimen/dimens_16sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="AvenirNextBold.White.16" parent="AvenirNextBold">
+        <item name="android:textSize">@dimen/dimens_16sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="AvenirNextRegular.Demi" parent="AvenirNextDemi">
+        <item name="android:textSize">@dimen/dimens_16sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="userModel"
+            type="com.example.finintask.model.UserModel" />
+        <variable
+            name="position"
+            type="String" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="@dimen/dimens_16dp"
+        app:cardBackgroundColor="#F8F3F5"
+        android:elevation="8dp"
+        app:cardCornerRadius="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/cv_avatar"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="74dp"
+                android:layout_height="74dp"
+                setImageFile="@{userModel.getAvatar()}"
+                app:civ_border_width="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+                app:civ_border_color="#E6E0E0"/>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/actv_name"
+                android:layout_width="@dimen/match_constraint"
+                android:layout_height="wrap_content"
+               android:layout_marginTop="24dp"
+                android:layout_marginLeft="16dp"
+                style="@style/AvenirNextRegular.Demi"
+                android:text="@{userModel.getFullName()}"
+                app:layout_constraintStart_toEndOf="@id/cv_avatar"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="@dimen/match_constraint"
+                android:layout_height="wrap_content"
+                android:text="@{userModel.getEmail()}"
+                android:id="@+id/actv_email"
+                style="@style/AvenirNextRegular.White.16"
+                app:layout_constraintStart_toEndOf="@id/cv_avatar"
+                app:layout_constraintTop_toBottomOf="@id/actv_name"
+                android:layout_marginLeft="16dp"
+                >
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="24dp"
+                android:layout_height="90dp"
+                android:text="@{position}"
+                style="@style/AvenirNextBold"
+                android:gravity="center"
+                android:textColor="@color/backgroundLight"
+                android:textAlignment="center"
+                setBackground="@{position}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="parent">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</layout>
